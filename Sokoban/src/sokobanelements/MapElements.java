@@ -17,5 +17,8 @@ public abstract class MapElements {  //Class was made abstract to provide a base
 	public ImageView getImage() {
 		return imageView;
 	}
+	
+	public void createElement() {
+    }
 
 }

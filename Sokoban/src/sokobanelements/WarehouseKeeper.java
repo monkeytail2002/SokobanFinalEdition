@@ -2,12 +2,10 @@
  * Angus MacDonald:  15009351
  * Tutor: Karen MacKay
  * Sokoban Assessment
- * Version 1.2 10/01/19
+ * Version 1.1 10/01/19
  */
 
-
 package sokobanelements;
-
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,31 +14,30 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import sokobanmechanics.Coordinates;
 
-public class Wall extends MapElements{
-	
-	
+public class WarehouseKeeper extends MoveableElements { 
+
 	/**
-	 * Object that creates the image for the wall and then sets it.  Then it will @return the ImageView.
+	 * Object that creates the image for the Warehouse Keeper and then sets it.  Then it will @return the ImageView.
 	 * @return
 	 * @throws FileNotFoundException
 	 */
-	
+	public Coordinates warehouseCoords = new Coordinates();
 	public ImageView setImage() throws FileNotFoundException {
-		Image image = new Image(new FileInputStream("res/Wall.png"));
+		Image image = new Image(new FileInputStream("res/WarehouseKeeper.png"));
 		ImageView imageView = new ImageView(image);
 		return imageView;
 	}
 	
 	/**
-	 * Object returns co-ordinates for wall
+	 * 
+	 * Object that returns the co-ordinates for the Warehouse Keeper.
+	 * 
 	 * @param x
 	 * @param y
 	 */
-	
     public void createElement(int x, int y) {
-        Coordinates wallCoords = new Coordinates();
-        wallCoords.setX(x);
-        wallCoords.setY(y);
+        warehouseCoords.setX(x);
+        warehouseCoords.setY(y);
     }
 
 
