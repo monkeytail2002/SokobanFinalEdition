@@ -24,15 +24,11 @@ public class Wall extends MapElements{
 	 * @throws FileNotFoundException
 	 */
 	
-	public ImageView wallImage() throws FileNotFoundException {
+	public ImageView setImage() throws FileNotFoundException {
 		Image image = new Image(new FileInputStream("res/Wall.png"));
 		ImageView imageView = new ImageView(image);
 		return imageView;
 	}
 	
-	public void createElement() {
-		
-	}
-
-
+	
 }
