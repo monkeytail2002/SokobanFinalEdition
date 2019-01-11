@@ -115,28 +115,5 @@ public class SokobanController{
         }
     }
     
-    /**
-     * Series of objects that control movement via key press.
-     */
-    
-    public void handle (KeyEvent event) {
-    	if(event.getCode() == KeyCode.UP) {
-    		level.moveUp();
-    		setImage(level.getMap());
-//    		System.out.println("Key pressed");
-    	}
-    	if(event.getCode() == KeyCode.DOWN) {
-    		level.moveUp();
-    		setImage(level.getMap());
-    	}
-    	if(event.getCode() == KeyCode.RIGHT) {
-    		level.moveUp();
-    		setImage(level.getMap());
-    	}
-    	if(event.getCode() == KeyCode.LEFT) {
-    		level.moveUp();
-    		setImage(level.getMap());
-    	}
-    }
 
 }
