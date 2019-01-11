@@ -40,6 +40,7 @@ public class Main extends Application implements EventHandler<KeyEvent>{
             String viewerFxml = "sokobanMenu.fxml";
             VBox page = (VBox) fxmlLoader.load(this.getClass().getResource(viewerFxml).openStream());
             Scene scene = new Scene(page);
+            scene.setOnKeyPressed(this);
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException ex) {
@@ -60,15 +61,15 @@ public class Main extends Application implements EventHandler<KeyEvent>{
 //    		System.out.println("Key pressed");
     	}
     	if(event.getCode() == KeyCode.DOWN) {
-    		level.moveUp();
+    		level.moveDown();
     		sokCont.setImage(level.getMap());
     	}
     	if(event.getCode() == KeyCode.RIGHT) {
-    		level.moveUp();
+    		level.moveRight();
     		sokCont.setImage(level.getMap());
     	}
     	if(event.getCode() == KeyCode.LEFT) {
-    		level.moveUp();
+    		level.moveLeft();
     		sokCont.setImage(level.getMap());
     	}
     }
