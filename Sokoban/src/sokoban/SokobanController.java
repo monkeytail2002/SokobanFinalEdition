@@ -8,26 +8,20 @@
 
 package sokoban;
 
-import java.io.IOException;
-import java.util.logging.Logger;
 
-import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 
-public class SokobanController extends Application implements EventHandler<KeyEvent>{
+public class SokobanController{
 	
 	
     Level level = new Level();
@@ -36,25 +30,7 @@ public class SokobanController extends Application implements EventHandler<KeyEv
 	  * This loads in the FXML file for the GUI
 	  */
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {  //load the javafx document
-
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            String viewerFxml = "sokobanMenu.fxml";
-            VBox page = (VBox) fxmlLoader.load(this.getClass().getResource(viewerFxml).openStream());
-            Scene scene = new Scene(page);
-            scene.setOnKeyPressed(this);
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(this.getClass().getName()).log(java.util.logging.Level.SEVERE, null, ex);
-            System.exit(1);
-        }
-
-    }	
-    
-    
+      
    
     
 
@@ -162,7 +138,5 @@ public class SokobanController extends Application implements EventHandler<KeyEv
     		setImage(level.getMap());
     	}
     }
-
-    
 
 }
