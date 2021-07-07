@@ -141,90 +141,20 @@ public class Level {
      * A series of objects that control movement
      */
     public void moveUp() {
-    	moveCrate(0, -1);
+
     }
 
     public void moveRight() {
-    	moveCrate(1, 0);
+
     }
 
     public void moveDown() {
-    	moveCrate(0, 1);
+
     }
 
     public void moveLeft() {
-    	moveCrate(-1, 0);
-    }
-    
-    /**
-     * Object that checks and controls the warehouse keeper movement
-     * @param moveX
-     * @param moveY
-     */
-    
-    public void wKeeperMove(int moveX, int moveY) {
-        if (levelArray[wKeeper.keeperCoords.getX() + moveX][wKeeper.keeperCoords.getY() + moveY] instanceof Wall) {
-        	
-        } else {
-            Tile tile = new Tile();
-            setMapElement(wKeeper.keeperCoords.getX(), wKeeper.keeperCoords.getY(), tile);
-            wKeeper.keeperCoords.setX(wKeeper.keeperCoords.getX() + moveX);
-            wKeeper.keeperCoords.setY(wKeeper.keeperCoords.getY() + moveY);
-            setMapElement(wKeeper.keeperCoords.getX(), wKeeper.keeperCoords.getY(), wKeeper);
-            winCondition();
-        }
-    }
-    
-    
-    
-    /**
-     * Object checks for crates and their movement 
-     * @param moveX
-     * @param moveY
-     */
 
-    public void moveCrate(int moveX, int moveY) {
-        if (levelArray[wKeeper.keeperCoords.getX() + moveX][wKeeper.keeperCoords.getY() + moveY] instanceof Crate
-                && levelArray[wKeeper.keeperCoords.getX() + moveX * 2][wKeeper.keeperCoords.getY() + moveY * 2] instanceof Wall
-                || levelArray[wKeeper.keeperCoords.getX() + moveX][wKeeper.keeperCoords.getY() + moveY] instanceof Crate
-                && levelArray[wKeeper.keeperCoords.getX() + moveX * 2][wKeeper.keeperCoords.getY() + moveY * 2] instanceof Crate) {
-            //dont move
-        } else if (levelArray[wKeeper.keeperCoords.getX() + moveX][wKeeper.keeperCoords.getY() + moveY] instanceof Crate) {
-            //move crate
-            Crate crate = new Crate();
-            setMapElement(wKeeper.keeperCoords.getX() + moveX * 2, wKeeper.keeperCoords.getY() + moveY * 2, crate);
-            wKeeperMove(moveX, moveY);
-        } else {
-        	wKeeperMove(moveX, moveY);
-        }
-    }
-    
-    
-    /**
-     * Object checks win conditions and keeps track of the number of crates on diamonds.
-     */
-    
-   
-    public void winCondition() { 
-    	int cratesOnDiamonds = 0;
-        int diamonds = 0;
-        for (int x = 0; x < 25; x++) {
-            for (int y = 0; y < 15; y++) {
-                if (diamondArray[x][y] instanceof Diamond) {
-                    diamonds++;
-                }
-            }
-        }
-        for (int x = 0; x < 25; x++) {
-            for (int y = 0; y < 15; y++) {
-                if (diamondArray[x][y] instanceof Diamond && levelArray[x][y] instanceof Crate) {
-                    cratesOnDiamonds++;
-                    if (cratesOnDiamonds == diamonds) {
-                        
-                    }
-                }
-            }
-        }
     }
 
+  
 }
